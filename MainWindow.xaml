@@ -1,0 +1,78 @@
+﻿<Window x:Class="demoTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demoTest"
+        mc:Ignorable="d"
+        Title="ООО 'БытСервис'"
+        MinHeight="600" MinWidth="800"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Style="{StaticResource WndwStyle}"
+        Icon="Images/profile123.jpg">
+    <Border CornerRadius="30">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="ООО 'БытСервис'"
+               Grid.Row="0" HorizontalAlignment="Left"
+               Style="{StaticResource LblStyle}"/>
+            <StackPanel Grid.Row="0" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                <Button x:Name="btnHideWindow" Content="_"
+                    Style="{StaticResource BtnStyle}"
+                    Click="btnHideWindow_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnFullWindow" Content="D"
+                    Style="{StaticResource BtnStyle}" 
+                    Click="btnFullWindow_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnClose" Content="X"
+                    Style="{StaticResource BtnStyle}"
+                    Click="btnClose_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+
+            <Frame Grid.Row="1" Name="frameInWindow" 
+                   NavigationUIVisibility="Hidden"/>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Label  Style="{StaticResource LblStyle}"
+                   Content="Уважаемый пользователь, для возвращения назад нажимайте эту кнопку ->"/>
+                <Button Name="btnBack" Content="Назад"
+                    MinWidth="100"
+                    Style="{StaticResource BtnStyle}"
+                    Click="btnBack_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
